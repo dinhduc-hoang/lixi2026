@@ -16,8 +16,8 @@ app.use('/img', express.static(path.join(__dirname, '..', 'img')));
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 // Supabase client
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.SUPABASE_URL || 'https://placeholder.supabase.co';
+const supabaseKey = process.env.SUPABASE_ANON_KEY || 'placeholder';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Generate transaction ID
@@ -201,7 +201,7 @@ app.get('/api/health', (req, res) => {
 module.exports = app;
 
 // For local development
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
         console.log(`
