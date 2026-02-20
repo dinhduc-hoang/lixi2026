@@ -668,8 +668,8 @@
 
         const prizes = [
             { id: 1, name: '50K', value: 50000, color: '#ff6b6b', emoji: '🧧' },
-            { id: 2, name: '36K', value: 36000, color: '#feca57', emoji: '🧧' },
-            { id: 3, name: '18K', value: 18000, color: '#48dbfb', emoji: '🧧' },
+            { id: 2, name: 'Rau má', value: 36000, color: '#feca57', emoji: '🧧' },
+            { id: 3, name: '2 Ngón', value: 18000, color: '#48dbfb', emoji: '🧧' },
             { id: 4, name: '10K', value: 10000, color: '#ff9ff3', emoji: '🧧' },
             { id: 5, name: '5K', value: 5000, color: '#1dd1a1', emoji: '🧧' },
             { id: 6, name: '2K', value: 2000, color: '#5f27cd', emoji: '🧧' },
@@ -846,7 +846,7 @@
             spinButton.disabled = true;
             spinButton.classList.remove('pulse-crazy');
             spinBtn.style.pointerEvents = 'none';
-            document.getElementById('spinStatus').innerHTML = '🧧 ĐANG QUAY... ĐƠI TÍ';
+            document.getElementById('spinStatus').innerHTML = '🧧 ĐANG QUAY... ĐỢI TÍ';
 
             // Calculate random result
             const segmentAngle = 360 / prizes.length; // 51.43 độ mỗi segment
@@ -997,7 +997,7 @@
             spinButton.disabled = false;
             spinButton.classList.add('pulse-crazy');
             spinBtn.style.pointerEvents = 'auto';
-            document.getElementById('spinStatus').innerHTML = 'Bấm để thử vận may! 🍀';
+            document.getElementById('spinStatus').innerHTML = 'Bấms';
 
             showPage('formPage');
         }
