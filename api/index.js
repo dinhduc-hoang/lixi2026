@@ -31,21 +31,28 @@ function generateTransactionId() {
 app.post('/api/register', async (req, res) => {
     try {
         const { name, qrImageBase64, qrImageType } = req.body;
-        
+
         if (!name || !qrImageBase64) {
-            return res.status(400).json({ 
-                success: false, 
-                message: 'Vui lòng điền tên và upload ảnh QR!' 
+            return res.status(400).json({
+                success: false,
+                message: 'Vui lòng điền tên và upload ảnh QR!'
+            });
+        }
+
+        if (supabaseUrl === 'https://placeholder.supabase.co') {
+            return res.status(500).json({
+                success: false,
+                message: 'Chưa cấu hình Supabase trên Vercel! Vui lòng vào Settings > Environment Variables để thêm SUPABASE_URL và SUPABASE_ANON_KEY'
             });
         }
 
         // Upload image to Supabase Storage
         const fileName = `qr-${Date.now()}-${Math.random().toString(36).substring(7)}.${qrImageType || 'jpg'}`;
-        
+
         // Convert base64 to buffer
         const base64Data = qrImageBase64.replace(/^data:image\/\w+;base64,/, '');
         const buffer = Buffer.from(base64Data, 'base64');
-        
+
         const { data: uploadData, error: uploadError } = await supabase.storage
             .from('qr-images')
             .upload(fileName, buffer, {
@@ -97,9 +104,16 @@ app.post('/api/spin', async (req, res) => {
         const { userId, prizeName, prizeValue, prizeEmoji } = req.body;
 
         if (!userId || !prizeName || prizeValue === undefined) {
-            return res.status(400).json({ 
-                success: false, 
-                message: 'Thiếu thông tin!' 
+            return res.status(400).json({
+                success: false,
+                message: 'Thiếu thông tin!'
+            });
+        }
+
+        if (supabaseUrl === 'https://placeholder.supabase.co') {
+            return res.status(500).json({
+                success: false,
+                message: 'Chưa cấu hình Supabase trên Vercel!'
             });
         }
 
@@ -175,7 +189,7 @@ app.get('/api/stats', async (req, res) => {
     try {
         const { data: users } = await supabase.from('users').select('id', { count: 'exact' });
         const { data: spins, count: spinCount } = await supabase.from('spin_results').select('prize_value', { count: 'exact' });
-        
+
         const totalPrizeValue = spins?.reduce((sum, s) => sum + s.prize_value, 0) || 0;
 
         res.json({
