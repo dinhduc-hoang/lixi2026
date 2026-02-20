@@ -16,8 +16,8 @@ app.use('/img', express.static(path.join(__dirname, '..', 'img')));
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 // Supabase client
-const supabaseUrl = process.env.SUPABASE_URL || 'https://placeholder.supabase.co';
-const supabaseKey = process.env.SUPABASE_ANON_KEY || 'placeholder';
+const supabaseUrl = process.env.SUPABASE_URL || 'https://muqlgjdbwbdcpjgfmvoh.supabase.co';
+const supabaseKey = process.env.SUPABASE_ANON_KEY || 'sb_publishable_ReG_dJG_l2DsZEC4nTaPwA_k2iL2M3A';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Generate transaction ID
@@ -39,12 +39,6 @@ app.post('/api/register', async (req, res) => {
             });
         }
 
-        if (supabaseUrl === 'https://placeholder.supabase.co') {
-            return res.status(500).json({
-                success: false,
-                message: 'Chưa cấu hình Supabase trên Vercel! Vui lòng vào Settings > Environment Variables để thêm SUPABASE_URL và SUPABASE_ANON_KEY'
-            });
-        }
 
         // Upload image to Supabase Storage
         const fileName = `qr-${Date.now()}-${Math.random().toString(36).substring(7)}.${qrImageType || 'jpg'}`;
@@ -110,12 +104,6 @@ app.post('/api/spin', async (req, res) => {
             });
         }
 
-        if (supabaseUrl === 'https://placeholder.supabase.co') {
-            return res.status(500).json({
-                success: false,
-                message: 'Chưa cấu hình Supabase trên Vercel!'
-            });
-        }
 
         const transactionId = generateTransactionId();
 
