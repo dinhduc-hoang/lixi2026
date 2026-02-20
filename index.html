@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧧 LÌ XÌ SIÊU BỰA 2026 🧧</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* Crazy Background */
+        .bg-crazy {
+            background: linear-gradient(-45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd);
+            background-size: 400% 400%;
+            animation: crazyBG 8s ease infinite;
+        }
+
+        @keyframes crazyBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Bounce Animation */
+        .bounce-crazy {
+            animation: bounceCrazy 1s ease infinite;
+        }
+
+        @keyframes bounceCrazy {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(3deg);
+            }
+        }
+
+        /* Shake Animation */
+        .shake-it {
+            animation: shakeIt 0.5s ease infinite;
+        }
+
+        @keyframes shakeIt {
+
+            0%,
+            100% {
+                transform: rotate(-2deg);
+            }
+
+            50% {
+                transform: rotate(2deg);
+            }
+        }
+
+        /* Wiggle Animation */
+        .wiggle {
+            animation: wiggle 0.8s ease infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        /* Float crazy */
+        .float-crazy {
+            animation: floatCrazy 3s ease-in-out infinite;
+        }
+
+        @keyframes floatCrazy {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: translateY(-15px) rotate(10deg) scale(1.1);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(-5deg) scale(1);
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(5deg) scale(1.05);
+            }
+        }
+
+        /* Page Transitions */
+        .page {
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .page.hidden {
+            opacity: 0;
+            transform: scale(0.5) rotate(10deg);
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .page.active {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        /* WHEEL STYLES */
+        .wheel-wrapper {
+            position: relative;
+            width: 340px;
+            height: 340px;
+        }
+
+        .wheel-outer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg,
+                    #ff6b6b 0deg 51.43deg,
+                    #feca57 51.43deg 102.86deg,
+                    #48dbfb 102.86deg 154.29deg,
+                    #ff9ff3 154.29deg 205.71deg,
+                    #1dd1a1 205.71deg 257.14deg,
+                    #5f27cd 257.14deg 308.57deg,
+                    #ff9f43 308.57deg 360deg);
+            box-shadow:
+                0 0 0 10px #ffd700,
+                0 0 0 15px #ff6b6b,
+                0 0 0 20px #ffd700,
+                0 0 30px rgba(0, 0, 0, 0.3),
+                inset 0 0 30px rgba(255, 255, 255, 0.2);
+            transition: transform 5s cubic-bezier(0.2, 0.8, 0.3, 0.99);
+        }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+        }
+
+        .wheel-pointer svg {
+            width: 60px;
+            height: 70px;
+        }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(145deg, #ffd700, #ffaa00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.4),
+                inset 0 3px 10px rgba(255, 255, 255, 0.5);
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 4px solid #ff6b6b;
+        }
+
+        @media (min-width: 640px) {
+            .wheel-center {
+                width: 90px;
+                height: 90px;
+                font-size: 40px;
+                border-width: 5px;
+            }
+        }
+
+        .wheel-center:hover {
+            transform: translate(-50%, -50%) scale(1.15) rotate(10deg);
+        }
+
+        .prize-text {
+            position: absolute;
+            font-weight: 900;
+            font-size: 14px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            animation: confettiFall 4s linear forwards;
+            z-index: 1000;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(1080deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Pulse crazy */
+        .pulse-crazy {
+            animation: pulseCrazy 1s ease infinite;
+        }
+
+        @keyframes pulseCrazy {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(255, 107, 107, 0);
+            }
+        }
+
+        /* Glow text */
+        .glow-text {
+            animation: glowText 2s ease infinite;
+        }
+
+        @keyframes glowText {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ff6b6b;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ff6b6b;
+            }
+        }
+
+        /* Image gallery */
+        .gallery-img {
+            transition: all 0.3s ease;
+            border: 4px solid transparent;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.2) rotate(5deg);
+            border-color: #ffd700;
+            z-index: 10;
+        }
+
+        /* Modal bounce */
+        .modal-bounce {
+            animation: modalBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes modalBounce {
+            0% {
+                transform: scale(0) rotate(-20deg);
+            }
+
+            50% {
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* Rainbow border */
+        .rainbow-border {
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #1dd1a1, #5f27cd, #ff6b6b);
+            background-size: 400% 100%;
+            animation: rainbowBorder 3s linear infinite;
+        }
+
+        @keyframes rainbowBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 400% 50%;
+            }
+        }
+
+        /* Disco text */
+        .disco-text {
+            animation: discoText 0.5s ease infinite;
+        }
+
+        @keyframes discoText {
+            0% {
+                color: #ff6b6b;
+            }
+
+            20% {
+                color: #feca57;
+            }
+
+            40% {
+                color: #48dbfb;
+            }
+
+            60% {
+                color: #ff9ff3;
+            }
+
+            80% {
+                color: #1dd1a1;
+            }
+
+            100% {
+                color: #ff6b6b;
+            }
+        }
+
+        /* Input focus */
+        .input-crazy:focus {
+            box-shadow: 0 0 0 4px #ff6b6b, 0 0 20px #ffd700;
+            transform: scale(1.02);
+        }
+
+        /* File upload styling */
+        .file-upload-area {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .file-upload-area:hover {
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .file-upload-area.dragover {
+            border-color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+            transform: scale(1.02);
+        }
+
+        /* Preview image */
+        .preview-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .preview-container .remove-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .preview-container .remove-btn:hover {
+            background: #e74c3c;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-crazy min-h-screen overflow-x-hidden">
+
+    <!-- Floating Images Decoration - BIGGER & MORE FUN -->
+    <img src="img/355225424_286617613804806_2420292483691815473_n.jpg"
+        class="fixed top-2 left-2 sm:top-5 sm:left-5 w-20 h-20 sm:w-40 sm:h-40 rounded-3xl object-cover float-crazy shadow-2xl border-2 sm:border-4 border-yellow-400"
+        style="animation-delay: 0s;">
+    <img src="img/456104126_548550414173332_8159257794084573027_n.jpg"
+        class="fixed top-4 right-2 sm:top-8 sm:right-8 w-24 h-24 sm:w-44 sm:h-44 rounded-full object-cover float-crazy shadow-2xl border-2 sm:border-4 border-pink-400"
+        style="animation-delay: 0.5s;">
+    <img src="img/462639829_1117835966517255_9155063290152854284_n.jpg"
+        class="fixed bottom-2 left-2 sm:bottom-24 sm:left-8 w-20 h-20 sm:w-36 sm:h-36 rounded-2xl object-cover float-crazy shadow-2xl border-2 sm:border-4 border-cyan-400"
+        style="animation-delay: 1s;">
+    <img src="img/632638599_2011443889401438_2671085837897543944_n.jpg"
+        class="fixed bottom-4 right-2 sm:bottom-8 sm:right-5 w-24 h-24 sm:w-40 sm:h-40 rounded-full object-cover float-crazy shadow-2xl border-2 sm:border-4 border-purple-400"
+        style="animation-delay: 1.5s;">
+    <img src="img/632542307_1254412846668032_3935723264242000770_n.jpg"
+        class="fixed top-28 left-4 sm:top-1/4 sm:left-1/4 w-16 h-16 sm:w-32 sm:h-32 rounded-xl object-cover float-crazy shadow-2xl border-2 sm:border-4 border-red-400"
+        style="animation-delay: 1.1s;">
+    <img src="img/633772465_1306012548012729_2395583962563541116_n.jpg"
+        class="fixed top-20 right-1/2 sm:top-1/3 sm:left-3 w-16 h-16 sm:w-32 sm:h-32 rounded-xl object-cover float-crazy shadow-2xl border-2 sm:border-4 border-green-400"
+        style="animation-delay: 0.8s;">
+    <img src="img/632573091_2404658293314840_4199971500002113941_n.jpg"
+        class="fixed bottom-24 left-6 sm:bottom-1/3 sm:left-1/3 w-20 h-20 sm:w-36 sm:h-36 rounded-full object-cover float-crazy shadow-2xl border-2 sm:border-4 border-blue-400"
+        style="animation-delay: 1.3s;">
+    <img src="img/635382616_1843595903009941_7814817371779289037_n.jpg"
+        class="fixed top-6 left-1/3 sm:top-1/2 sm:right-1/4 w-16 h-16 sm:w-32 sm:h-32 rounded-2xl object-cover float-crazy shadow-2xl border-2 sm:border-4 border-indigo-400"
+        style="animation-delay: 0.4s;">
+    <img src="img/636673804_1221640030042412_7572105933556239777_n.jpg"
+        class="fixed bottom-32 right-4 sm:bottom-1/4 sm:right-1/3 w-16 h-16 sm:w-28 sm:h-28 rounded-lg object-cover float-crazy shadow-2xl border-2 sm:border-4 border-pink-500"
+        style="animation-delay: 1.8s;">
+    <img src="img/636331555_896466659686178_1654420089507466379_n.jpg"
+        class="fixed bottom-20 right-1/2 sm:top-1/2 sm:right-3 w-20 h-20 sm:w-36 sm:h-36 rounded-3xl object-cover float-crazy shadow-2xl border-2 sm:border-4 border-orange-400"
+        style="animation-delay: 1.2s;">
+
+    <!-- Lì Xì Emoji Only -->
+    <div class="fixed top-1/4 left-20 text-7xl bounce-crazy">🧧</div>
+    <div class="fixed top-1/3 right-20 text-6xl wiggle">🧧</div>
+    <div class="fixed bottom-1/4 left-24 text-6xl shake-it">🧧</div>
+    <div class="fixed bottom-1/3 right-24 text-7xl bounce-crazy" style="animation-delay: 0.3s;">🧧</div>
+    <div class="fixed top-2/3 left-12 text-5xl float-crazy" style="animation-delay: 0.6s;">🧧</div>
+    <div class="fixed bottom-2/3 right-16 text-5xl wiggle" style="animation-delay: 0.9s;">🧧</div>
+
+    <!-- ==================== PAGE 1: FORM ==================== -->
+    <div id="formPage" class="page active min-h-screen flex items-center justify-center p-4 relative z-10">
+
+        <div
+            class="bg-white/90 backdrop-blur-md p-6 sm:p-8 max-w-md w-full relative z-10 rounded-3xl border border-white/20 text-gray-900 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <h1 class="text-4xl md:text-5xl font-black glow-text mb-2 center">
+                    🧧 LÌ XÌ TUẤT 🧧
+                </h1>
+
+            </div>
+
+            <!-- Fun Images Row - BIGGER -->
+            <!-- <div class="flex justify-center gap-2 sm:gap-4 mb-6">
+                <img src="img/634854608_911870391583525_5610631976880587881_n.jpg"
+                    class="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl object-cover gallery-img shadow-xl border-4 border-red-300">
+                <img src="img/636331555_896466659686178_1654420089507466379_n.jpg"
+                    class="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover gallery-img shadow-xl border-4 border-yellow-300">
+                <img src="img/355225424_286617613804806_2420292483691815473_n.jpg"
+                    class="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl object-cover gallery-img shadow-xl border-4 border-pink-300">
+            </div> -->
+
+            <!-- Form -->
+            <form id="registrationForm" class="space-y-5">
+                <!-- Name Input -->
+                <div class="relative">
+                    <label class="block font-black mb-2 text-lg text-gray-800">
+                        🧧 TÊN
+                    </label>
+                    <input type="text" id="playerName" placeholder="Nhập tên của bạn..."
+                        class="input-crazy w-full px-5 py-4 border-2 border-gray-300 rounded-2xl focus:border-yellow-400 focus:outline-none transition-all text-lg font-bold bg-white text-gray-900 shadow-inner"
+                        required>
+                </div>
+
+                <!-- QR Bank Image Upload -->
+                <div class="relative">
+                    <label class="block font-black mb-2 text-lg text-gray-800">
+                        🏦 ẢNH MÃ QR NGÂN HÀNG
+                    </label>
+                    <!-- Upload Area -->
+                    <div id="uploadArea"
+                        class="file-upload-area border-2 border-dashed border-gray-400 rounded-2xl p-6 text-center bg-white text-gray-900 shadow-inner"
+                        onclick="document.getElementById('qrImageInput').click()">
+                        <div id="uploadPlaceholder">
+                            <div class="text-5xl mb-3">📷</div>
+                            <p class="text-gray-600 font-bold">Nhấn để chọn ảnh QR</p>
+                            <p class="text-gray-500 text-sm mt-1">hoặc kéo thả ảnh vào đây</p>
+                        </div>
+                        <div id="previewArea" class="hidden">
+                            <div class="preview-container">
+                                <img id="qrPreview" class="max-h-40 rounded-xl shadow-lg mx-auto">
+                                <div class="remove-btn" onclick="event.stopPropagation(); removeImage()">✕</div>
+                            </div>
+                            <p class="text-green-600 font-bold mt-2">✅ Đã chọn ảnh!</p>
+                        </div>
+                    </div>
+                    <input type="file" id="qrImageInput" accept="image/*" class="hidden" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn"
+                    class="pulse-crazy w-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-yellow-500 hover:via-red-500 hover:to-pink-500 text-white font-black py-5 px-6 rounded-2xl text-2xl transition-all transform hover:scale-105 shadow-xl uppercase tracking-wider">
+                    🧧 Vào! 🧧
+                </button>
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- ==================== PAGE 2: SPIN WHEEL ==================== -->
+    <div id="spinPage" class="page hidden min-h-screen flex flex-col items-center justify-center p-4 relative z-10">
+
+        <div
+            class="bg-white/90 backdrop-blur-md p-6 max-w-md w-full relative z-10 rounded-3xl border border-white/20 text-gray-900 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            <!-- Rainbow top border -->
+            <div class="absolute top-0 left-0 right-0 h-2 rainbow-border"></div>
+
+            <!-- Welcome Message -->
+            <div class="text-center mb-4">
+                <h2 class="text-xl sm:text-2xl font-black disco-text mb-1 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+                    <span id="welcomeName" class="uppercase text-white"></span>s
+                </h2>
+                <p class="text-base sm:text-lg font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">BẤM VÀO
+                    QUAY ĐÊ</p>
+            </div>
+
+            <!-- Wheel Container -->
+            <div class="flex justify-center mb-4 overflow-hidden relative sm:h-[340px] h-[300px]">
+                <div class="wheel-wrapper scale-[0.85] sm:scale-100 origin-top">
+                    <!-- Pointer -->
+                    <div class="wheel-pointer">
+                        <svg viewBox="0 0 60 70">
+                            <polygon points="30,70 0,0 60,0" fill="#ffd700" stroke="#ff6b6b" stroke-width="3" />
+                            <polygon points="30,60 10,10 50,10" fill="#ffaa00" />
+                        </svg>
+                    </div>
+
+                    <!-- Wheel -->
+                    <div class="wheel-outer" id="wheel"></div>
+
+                    <!-- Center button -->
+                    <div class="wheel-center" id="spinBtn" onclick="spinWheel()">
+                        🧧
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spin Button -->
+            <button id="spinButton" onclick="spinWheel()"
+                class="pulse-crazy w-full bg-gradient-to-r from-green-400 via-yellow-400 to-orange-400 hover:from-orange-400 hover:via-yellow-400 hover:to-green-400 text-gray-900 font-black py-4 px-4 sm:px-8 rounded-2xl text-xl sm:text-2xl transition-all transform hover:scale-105 shadow-xl">
+                LỌ
+            </button>
+
+            <p id="spinStatus"
+                class="mt-3 text-center text-gray-700 font-bold drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]">
+                NĂM MỚI MÃ ĐÁO THÀNH CÔNG
+            </p>
+        </div>
+
+        <!-- Fun images below - BIGGER -->
+        <div class="flex justify-center gap-2 sm:gap-4 mt-4">
+            <img src="img/456104126_548550414173332_8159257794084573027_n.jpg"
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover gallery-img shadow-xl border-4 border-yellow-400">
+            <img src="img/462639829_1117835966517255_9155063290152854284_n.jpg"
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover gallery-img shadow-xl border-4 border-pink-400">
+            <img src="img/632638599_2011443889401438_2671085837897543944_n.jpg"
+                class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover gallery-img shadow-xl border-4 border-cyan-400">
+        </div>
+    </div>
+
+    <!-- ==================== PAGE 3: RESULT ==================== -->
+    <div id="resultPage" class="page hidden min-h-screen flex items-center justify-center p-4 relative z-10">
+
+        <div
+            class="bg-black/60 p-6 sm:p-8 max-w-md w-full text-center relative z-10 rounded-3xl border border-white/20 text-white shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+
+            <div class="text-8xl mb-4 bounce-crazy" id="resultEmoji">🧧</div>
+
+            <h2 class="text-3xl font-black glow-text mb-2">
+                TÍ ANH BANK CHO
+            </h2>
+
+            <p class="text-xl text-gray-700 font-bold mb-2">
+                <span id="winnerName" class="uppercase disco-text"></span>:v
+            </p>
+
+            <div class="bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400 text-white font-black text-4xl py-6 px-8 rounded-2xl mb-6 shadow-xl wiggle"
+                id="resultPrize">
+                🧧 50K 🧧
+            </div>
+
+
+            <!-- Result images - BIGGER -->
+            <div class="flex justify-center gap-2 sm:gap-3 mb-4">
+                <img src="img/634854608_911870391583525_5610631976880587881_n.jpg"
+                    class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shadow-xl border-4 border-yellow-400 bounce-crazy">
+                <img src="img/636331555_896466659686178_1654420089507466379_n.jpg"
+                    class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover shadow-xl border-4 border-pink-400 wiggle">
+                <img src="img/462639829_1117835966517255_9155063290152854284_n.jpg"
+                    class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shadow-xl border-4 border-cyan-400 bounce-crazy"
+                    style="animation-delay: 0.3s;">
+            </div>
+
+            <div class="flex justify-center gap-3 flex-wrap">
+                <button id="viewHistory" onclick="showHistory()"
+                    class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 text-white font-black py-3 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg">
+                    XEM LỊCH SỬ
+                </button>
+                <button id="newSpin" onclick="resetGame()"
+                    class="bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 text-white font-black py-3 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg">
+                    LẠI
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HISTORY MODAL ==================== -->
+    <div id="historyModal"
+        class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4">
+        <div
+            class="modal-bounce bg-white/90 backdrop-blur-md rounded-3xl p-4 sm:p-6 w-full max-w-lg max-h-[85vh] sm:max-h-[80vh] flex flex-col shadow-2xl relative">
+            <!-- Rainbow top border -->
+            <div class="absolute top-0 left-0 right-0 h-2 rainbow-border"></div>
+
+            <div class="flex justify-between items-center mb-4 mt-2 shrink-0">
+                <h2 class="text-xl sm:text-2xl font-black disco-text">LỊCH SỬ</h2>
+                <button onclick="closeHistory()"
+                    class="text-4xl text-gray-400 hover:text-red-500 transition-all hover:rotate-90">&times;</button>
+            </div>
+            <div class="overflow-y-auto flex-1 min-h-[40vh]" id="historyList">
+                <!-- History items -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay"
+        class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 text-center">
+            <div class="text-6xl mb-4 bounce-crazy">🧧</div>
+            <p class="font-black text-xl disco-text">ĐANG XỬ LÝ...</p>
+        </div>
+    </div>
+
+    <script>
+        // ==================== CONFIGURATION ====================
+        // API_BASE tự động detect local hoặc production
+        const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
+
+        const prizes = [
+            { id: 1, name: '50K', value: 50000, color: '#ff6b6b', emoji: '🧧' },
+            { id: 2, name: '36K', value: 36000, color: '#feca57', emoji: '🧧' },
+            { id: 3, name: '18K', value: 18000, color: '#48dbfb', emoji: '🧧' },
+            { id: 4, name: '10K', value: 10000, color: '#ff9ff3', emoji: '🧧' },
+            { id: 5, name: '5K', value: 5000, color: '#1dd1a1', emoji: '🧧' },
+            { id: 6, name: '2K', value: 2000, color: '#5f27cd', emoji: '🧧' },
+            { id: 7, name: '1K', value: 1000, color: '#ff9f43', emoji: '🧧' },
+        ];
+
+        // ==================== STATE ====================
+        let currentUser = null;
+        let isSpinning = false;
+        let currentRotation = 0;
+        let selectedFile = null;
+
+        // ==================== FILE UPLOAD HANDLING ====================
+        const uploadArea = document.getElementById('uploadArea');
+        const qrImageInput = document.getElementById('qrImageInput');
+        const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+        const previewArea = document.getElementById('previewArea');
+        const qrPreview = document.getElementById('qrPreview');
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        // File input change
+        qrImageInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                alert('Vui lòng chọn file ảnh!');
+                return;
+            }
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File quá lớn! Tối đa 5MB.');
+                return;
+            }
+
+            selectedFile = file;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                qrPreview.src = e.target.result;
+                uploadPlaceholder.classList.add('hidden');
+                previewArea.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function removeImage() {
+            selectedFile = null;
+            qrImageInput.value = '';
+            qrPreview.src = '';
+            uploadPlaceholder.classList.remove('hidden');
+            previewArea.classList.add('hidden');
+        }
+
+        // ==================== DRAW PRIZE LABELS ====================
+        function drawPrizeLabels() {
+            const wheel = document.getElementById('wheel');
+            const segmentAngle = 360 / prizes.length;
+
+            prizes.forEach((prize, index) => {
+                const label = document.createElement('div');
+                label.className = 'prize-text';
+                label.innerHTML = `🧧<br>${prize.name}`;
+                label.style.position = 'absolute';
+                label.style.left = '50%';
+                label.style.top = '50%';
+                label.style.transform = `rotate(${index * segmentAngle + segmentAngle / 2}deg) translateY(-120px) translateX(-50%)`;
+                label.style.textAlign = 'center';
+                wheel.appendChild(label);
+            });
+        }
+
+        // ==================== PAGE NAVIGATION ====================
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+                page.classList.add('hidden');
+            });
+
+            const targetPage = document.getElementById(pageId);
+            targetPage.classList.remove('hidden');
+            setTimeout(() => targetPage.classList.add('active'), 10);
+        }
+
+        function showLoading() {
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').classList.add('hidden');
+        }
+
+        // ==================== FORM HANDLING ====================
+        document.getElementById('registrationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('playerName').value.trim();
+
+            if (!name) {
+                alert('Điền tên ĐÊ 😤');
+                return;
+            }
+
+            if (!selectedFile) {
+                alert('Chọn ảnh QR ngân hàng ĐÊ');
+                return;
+            }
+
+            showLoading();
+
+            try {
+                // Convert image to base64
+                const base64Image = qrPreview.src;
+                const imageType = selectedFile.type.split('/')[1] || 'jpeg';
+
+                // Send to server as JSON with base64 image
+                const response = await fetch(`${API_BASE}/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        qrImageBase64: base64Image,
+                        qrImageType: imageType
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    currentUser = result.user;
+                    document.getElementById('welcomeName').textContent = name;
+                    showPage('spinPage');
+                } else {
+                    alert('Lỗi: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Không kết nối được server! Chạy "npm start" chưa? 🤔');
+            }
+
+            hideLoading();
+        });
+
+        // ==================== WHEEL SPINNING ====================
+        async function spinWheel() {
+            if (isSpinning) return;
+
+            isSpinning = true;
+            const wheel = document.getElementById('wheel');
+            const spinButton = document.getElementById('spinButton');
+            const spinBtn = document.getElementById('spinBtn');
+
+            // Disable buttons
+            spinButton.disabled = true;
+            spinButton.classList.remove('pulse-crazy');
+            spinBtn.style.pointerEvents = 'none';
+            document.getElementById('spinStatus').innerHTML = '🧧 ĐANG QUAY... ĐƠI TÍ';
+
+            // Calculate random result
+            const segmentAngle = 360 / prizes.length; // 51.43 độ mỗi segment
+            const randomPrizeIndex = Math.floor(Math.random() * prizes.length);
+            const spins = 5 + Math.random() * 5; // 5-10 vòng quay
+
+            // Random vị trí trong segment (20% - 80% để không sát cạnh)
+            const positionInSegment = 0.2 + Math.random() * 0.6;
+
+            // Góc tâm của segment trúng thưởng trên vòng quay
+            // Segment 0 bắt đầu từ 0deg, tâm ở 25.7deg
+            const targetAngle = (randomPrizeIndex + positionInSegment) * segmentAngle;
+
+            // Để kim (ở top = 0deg viewport) chỉ vào targetAngle của element
+            // Cần quay sao cho targetAngle di chuyển lên top
+            // finalRotation = spins * 360 + (360 - targetAngle)
+            const finalRotation = currentRotation + (spins * 360) + (360 - targetAngle);
+
+            wheel.style.transform = `rotate(${finalRotation}deg)`;
+            currentRotation = finalRotation;
+
+            // Debug log
+            console.log('Random prize index:', randomPrizeIndex, '- Prize:', prizes[randomPrizeIndex].name);
+            console.log('Target angle:', targetAngle, 'Final rotation:', finalRotation);
+
+            // Wait for animation
+            setTimeout(async () => {
+                isSpinning = false;
+
+                // Verify: tính lại segment từ góc quay
+                const normalizedAngle = ((finalRotation % 360) + 360) % 360;
+                const pointerPosition = ((360 - normalizedAngle) % 360 + 360) % 360;
+                const calculatedIndex = Math.floor(pointerPosition / segmentAngle) % prizes.length;
+
+                console.log('Normalized angle:', normalizedAngle);
+                console.log('Pointer position:', pointerPosition);
+                console.log('Calculated index:', calculatedIndex, '- Prize:', prizes[calculatedIndex].name);
+
+                // Dùng calculated index để đảm bảo chính xác với visual
+                const prize = prizes[calculatedIndex];
+
+                // Save to database
+                try {
+                    const response = await fetch(`${API_BASE}/spin`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            userId: currentUser.id,
+                            prizeName: prize.name,
+                            prizeValue: prize.value,
+                            prizeEmoji: prize.emoji
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        document.getElementById('transactionId').textContent = result.result.transactionId;
+                    }
+                } catch (error) {
+                    console.error('Error saving result:', error);
+                }
+
+                // Show confetti
+                createConfetti();
+
+                // Update result page
+                document.getElementById('resultEmoji').textContent = '🧧';
+                document.getElementById('winnerName').textContent = currentUser.name;
+                document.getElementById('resultPrize').innerHTML = `🧧 ${prize.name} 🧧`;
+
+                setTimeout(() => showPage('resultPage'), 500);
+
+            }, 5500);
+        }
+
+        // ==================== CONFETTI ====================
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#1dd1a1', '#5f27cd', '#ff9f43', '#ffd700'];
+            const shapes = ['🧧', '✨', '🎉', '⭐'];
+
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.fontSize = (20 + Math.random() * 25) + 'px';
+                    confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                    confetti.style.animationDuration = (3 + Math.random() * 2) + 's';
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 40);
+            }
+        }
+
+        // ==================== HISTORY ====================
+        async function showHistory() {
+            const historyList = document.getElementById('historyList');
+            historyList.innerHTML = '<p class="text-center py-4">Đang tải...</p>';
+            document.getElementById('historyModal').classList.remove('hidden');
+
+            try {
+                const response = await fetch(`${API_BASE}/history`);
+                const data = await response.json();
+
+                if (data.success && data.results.length > 0) {
+                    historyList.innerHTML = data.results.map(r => `
+                        <div class="flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-pink-50 to-yellow-50 rounded-2xl mb-3 hover:scale-105 transition-all border-2 border-pink-200">
+                            <div class="flex items-center gap-2 sm:gap-3 overflow-hidden">
+                                <span class="text-2xl sm:text-3xl shrink-0">🧧</span>
+                                <div class="truncate">
+                                    <p class="font-black text-gray-800 text-sm sm:text-base truncate max-w-[120px] sm:max-w-xs">${r.user_name}</p>
+                                    <p class="text-[10px] sm:text-xs text-gray-500">${new Date(r.created_at).toLocaleString('vi-VN')}</p>
+                                </div>
+                            </div>
+                            <div class="text-right shrink-0">
+                                <p class="font-black text-red-600 text-base sm:text-lg">${r.prize_name}</p>
+                                <p class="text-[10px] sm:text-xs text-blue-500 font-mono">${r.transaction_id.substring(0, 8)}...</p>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    historyList.innerHTML = '<p class="text-center text-gray-500 py-8 font-bold">Chưa ai quay hết á! 😅</p>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                historyList.innerHTML = '<p class="text-center text-red-500 py-8 font-bold">Không kết nối được server! 😢</p>';
+            }
+        }
+
+        function closeHistory() {
+            document.getElementById('historyModal').classList.add('hidden');
+        }
+
+        document.getElementById('historyModal').addEventListener('click', function (e) {
+            if (e.target === this) closeHistory();
+        });
+
+        // ==================== RESET GAME ====================
+        function resetGame() {
+            document.getElementById('registrationForm').reset();
+            removeImage();
+            currentUser = null;
+
+            const spinButton = document.getElementById('spinButton');
+            const spinBtn = document.getElementById('spinBtn');
+            spinButton.disabled = false;
+            spinButton.classList.add('pulse-crazy');
+            spinBtn.style.pointerEvents = 'auto';
+            document.getElementById('spinStatus').innerHTML = 'Bấm để thử vận may! 🍀';
+
+            showPage('formPage');
+        }
+
+        // ==================== INITIALIZE ====================
+        drawPrizeLabels();
+        showPage('formPage');
+    </script>
+</body>
+
+</html>
